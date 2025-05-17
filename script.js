@@ -1,81 +1,89 @@
-// --- Starfield Background ---
-const canvas = document.getElementById('bg-canvas');
-const ctx    = canvas.getContext('2d');
-function resize() {
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
-resize();
-
-const stars = Array.from({ length: 100 }, () => ({
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height,
-  r: Math.random()*1.2+0.3
-}));
-function drawStars() {
-  const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg');
-  const ac = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-  ctx.fillStyle = bg.trim();
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  stars.forEach(s => {
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r,0,Math.PI*2);
-    ctx.fillStyle = ac.trim();
-    ctx.fill();
-    s.y += 0.3;
-    if (s.y > canvas.height) s.y = 0;
-  });
-  requestAnimationFrame(drawStars);
-}
-drawStars();
-
-// --- Typing Effect (About page) ---
-const typeTarget = document.getElementById('typed');
-if (typeTarget) {
-  const text = 'Hands-on experience in building and deploying deep learning models. Proficient in PyTorch and TensorFlow, with a focus on NLP, transformers, and model optimization. Developed a GPT-style conversational agent and a high-accuracy food classifier.';
-  let idx = 0;
-  function type() {
-    if (idx <= text.length) {
-      typeTarget.textContent = text.slice(0, idx++);
-      setTimeout(type, 40);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const particleContainer = document.getElementById('particle-bg');
+  if (!particleContainer) {
+    console.error('Particle container with id "particle-bg" not found!');
+    return;
   }
-  type();
-}
 
-// --- Skill Bars (Skills page) ---
-const bars = document.querySelectorAll('.bar div');
-window.addEventListener('scroll', () => {
-  bars.forEach(bar => {
-    const top = bar.getBoundingClientRect().top;
-    if (top < window.innerHeight * 0.85) {
-      bar.style.width = bar.dataset.level;
-    }
+  function createParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.top = Math.random() * 100 + 'vh';
+    particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+    particle.style.animationDelay = Math.random() * 5 + 's';
+    particleContainer.appendChild(particle);
+
+    particle.addEventListener('animationend', () => {
+      particle.remove();
+      createParticle();
+    });
+  }
+
+  for (let i = 0; i < 50; i++) {
+    createParticle();
+  }
+
+  const typeTarget = document.getElementById('typed');
+  if (typeTarget) {
+    const text = 'Hands-on experience in building and deploying deep learning models. Proficient in PyTorch and TensorFlow, with a focus on NLP, transformers, and model optimization. Developed a GPT-style conversational agent and a high-accuracy food classifier.';
+    let idx = 0;
+    (function type() {
+      if (idx <= text.length) {
+        typeTarget.textContent = text.slice(0, idx++);
+        setTimeout(type, 20);
+      }
+    })();
+  }
+
+  const bars = document.querySelectorAll('.bar div');
+  const snapContainer = document.querySelector('.snap-container');
+  snapContainer.addEventListener('scroll', () => {
+    bars.forEach(bar => {
+      if (bar.getBoundingClientRect().top < window.innerHeight * 0.85) {
+        bar.style.width = bar.dataset.level;
+      }
+    });
   });
-});
 
-// --- Theme Toggle ---
-const toggle = document.getElementById('theme-toggle');
-toggle.addEventListener('click', () => {
-  document.documentElement.classList.toggle('dark');
-});
-
-// --- Ripple Effect on Buttons ---
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    const x = e.offsetX, y = e.offsetY;
-    const span = document.createElement('span');
-    span.classList.add('ripple');
-    span.style.left = x+'px'; span.style.top = y+'px';
-    btn.appendChild(span);
-    setTimeout(()=> span.remove(), 600);
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
   });
-});
 
-// --- Highlight Active Nav Link ---
-const navLinks = document.querySelectorAll('.navbar a');
-const path = window.location.pathname.split('/').pop();
-navLinks.forEach(a => {
-  if (a.getAttribute('href') === path) a.classList.add('active');
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const x = e.offsetX, y = e.offsetY;
+      const span = document.createElement('span');
+      span.className = 'ripple';
+      span.style.left = x + 'px';
+      span.style.top = y + 'px';
+      btn.appendChild(span);
+      setTimeout(() => span.remove(), 600);
+    });
+  });
+
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = document.getElementById('email-input').value;
+      navigator.clipboard.writeText(email).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = 'Copy Email', 1500);
+      });
+    });
+  }
+
+  const sections = document.querySelectorAll('.snap-section');
+  const navLinks = document.querySelectorAll('.navbar a');
+  function highlightNav() {
+    let idx = 0, min = Infinity;
+    sections.forEach((sec, i) => {
+      const d = Math.abs(sec.getBoundingClientRect().top);
+      if (d < min) { min = d; idx = i; }
+    });
+    navLinks.forEach(a => a.classList.remove('active'));
+    navLinks[idx].classList.add('active');
+  }
+  snapContainer.addEventListener('scroll', highlightNav);
+  highlightNav();
 });
