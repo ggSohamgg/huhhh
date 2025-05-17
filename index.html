@@ -1,38 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About – Soham Banerjee</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soham Banerjee - AI/ML Engineer</title>
+  <link rel="stylesheet" href="style.css" onerror="console.error('Failed to load style.css')">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" onerror="document.body.style.fontFamily='Segoe UI, sans-serif'">
 </head>
 <body>
-  <!-- Shared Nav -->
+  <div id="particle-bg"></div>
+  <button id="theme-toggle">Toggle Theme</button>
   <nav class="navbar">
     <ul>
-      <li><a href="index.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
     </ul>
   </nav>
-
-  <canvas id="bg-canvas"></canvas>
-  <button id="theme-toggle" class="btn">Toggle Theme</button>
-
-  <div class="container">
-    <header>
-      <h1>Soham Banerjee</h1>
-      <p class="subtitle">AI/ML Engineer (BTech CSE, 3rd Year)</p>
-    </header>
-
-    <section id="summary">
-      <h2>About Me</h2>
-      <p id="typed"></p>
+  <div class="snap-container">
+    <section class="snap-section" id="about">
+      <div class="container">
+        <h1>Soham Banerjee</h1>
+        <div class="subtitle">AI/ML Engineer (BTech CSE, 3rd Year)</div>
+        <h2>About Me</h2>
+        <p id="typed"></p>
+        <div class="social-email">
+          <div class="social-btns">
+            <a href="https://linkedin.com" class="btn btn-linkedin">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.48v8.37h2.79z"></path></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com" class="btn btn-github">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.13-1.47-1.13-1.47-.92-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.49 2.29 1.06 2.85.81.09-.64.35-1.06.64-1.31-2.23-.25-4.58-1.11-4.58-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.36 4.69-4.61 4.94.36.31.56.73.56 1.47v2.18c0 .27.16.59.67.5A10 10 0 0 0 22 12a10 10 0 0 0-10-10z"></path></svg>
+              GitHub
+            </a>
+          </div>
+          <div class="email-copy">
+            <input type="text" id="email-input" value="soham@example.com" readonly>
+            <button class="btn" id="copy-email-btn">Copy Email</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="snap-section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="projects-intro">A few highlights from my CV & GitHub work in NLP, Transformers, and model optimization:</p>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="https://via.placeholder.com/300x150?text=SparkQuiz" alt="SparkQuiz">
+            <h3>SparkQuiz</h3>
+            <p>Flask AI quiz generator (Qwen 3 30B), glassmorphism UI, deployed on Railway.</p>
+            <a href="https://github.com">Repo</a>
+          </div>
+          <div class="project-card">
+            <img src="https://via.placeholder.com/300x150?text=Conv_GPT" alt="Conv_GPT">
+            <h3>Conv_GPT</h3>
+            <p>PyTorch GPT-style agent (89M params), trained on DailyDialog & BlendedTalk.</p>
+            <a href="https://github.com">Repo</a>
+          </div>
+          <div class="project-card">
+            <img src="https://via.placeholder.com/300x150?text=Food+Classifier" alt="Food Classifier">
+            <h3>Food Classifier</h3>
+            <p>MobileNetV2 classifier (90% acc) on food categories, live on Hugging Face Spaces.</p>
+            <a href="https://github.com">Repo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="snap-section" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="card">
+          <div class="skill">
+            <span>Machine Learning</span>
+            <div class="bar"><div data-level="90%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Deep Learning</span>
+            <div class="bar"><div data-level="85%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Model Optimization & Deployment</span>
+            <div class="bar"><div data-level="80%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Frameworks</span>
+            <div class="bar"><div data-level="88%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Languages</span>
+            <div class="bar"><div data-level="92%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Cloud & Edge</span>
+            <div class="bar"><div data-level="75%"></div></div>
+          </div>
+          <div class="skill">
+            <span>Web (Flask, REST)</span>
+            <div class="bar"><div data-level="82%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="snap-section" id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="card">
+          <p><strong>BTech in Computer Science & Engineering (3rd Year)</strong></p>
+          <p>Kalinga Institute of Industrial Technology, Bhubaneswar, India</p>
+          <p>GPA: 8.84 / 10 (Expected 2027)</p>
+        </div>
+      </div>
+    </section>
+    <section class="snap-section" id="certificates">
+      <div class="container">
+        <h2>Certificates</h2>
+        <div class="card">
+          <p>NVIDIA Deep Learning Institute – Deep Learning (Apr 2025)</p>
+        </div>
+      </div>
     </section>
   </div>
-
-  <script src="script.js"></script>
+  <script src="script.js" onerror="console.error('Failed to load script.js')"></script>
 </body>
 </html>
