@@ -889,30 +889,3 @@ footer a:hover {
     align-items: flex-start;
   }
 }
-/* Logo styling */
-.site-logo {
-  height: 40px;
-  width: auto;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
-/* Optional hover effect for logo */
-.site-logo:hover {
-  filter: drop-shadow(0 0 5px var(--teal));
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .site-logo {
-    height: 32px;
-    margin-right: 8px;
-  }
-}
