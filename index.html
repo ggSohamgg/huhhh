@@ -1,15 +1,26 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soham Banerjee - AI/ML Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About – Soham Banerjee</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- Shared Nav -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+    </ul>
+  </nav>
+
   <canvas id="bg-canvas"></canvas>
   <button id="theme-toggle" class="btn">Toggle Theme</button>
+
   <div class="container">
     <header>
       <h1>Soham Banerjee</h1>
@@ -17,83 +28,9 @@
     </header>
 
     <section id="summary">
-      <h2>Summary</h2>
+      <h2>About Me</h2>
       <p id="typed"></p>
     </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>BTech in Computer Science & Engineering (3rd Year)</strong><br>
-      Kalinga Institute of Industrial Technology, Bhubaneswar, India<br>
-      GPA: 8.84 / 10 (Expected 2027)</p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skill">
-        <span>Machine Learning</span>
-        <div class="bar"><div data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Deep Learning</span>
-        <div class="bar"><div data-level="80%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Model Optimization & Deployment</span>
-        <div class="bar"><div data-level="75%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Frameworks</span>
-        <div class="bar"><div data-level="90%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Languages</span>
-        <div class="bar"><div data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Cloud & Edge</span>
-        <div class="bar"><div data-level="70%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Web</span>
-        <div class="bar"><div data-level="65%"></div></div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="card">
-        <div class="card-inner">
-          <h3>SparkQuiz</h3>
-          <p>AI-Powered Quiz Generator (Flask, Qwen 3 30B) – Glass-morphism UI, live on Railway</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-inner">
-          <h3>Conv_GPT</h3>
-          <p>GPT-style Conversational Agent (PyTorch, 89M params) – 12-layer Transformer, mixed precision training</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-inner">
-          <h3>Food Classifier</h3>
-          <p>MobileNetV2 image classifier (90% accuracy) – Deployed on Hugging Face Spaces</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificates">
-      <h2>Certificates</h2>
-      <ul>
-        <li>
-          NVIDIA Deep Learning Institute – Certificate in Deep Learning (Apr 2025) – CNNs, data augmentation, fine-tuning pretrained models
-        </li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>© 2025 Soham Banerjee</p>
-    </footer>
   </div>
 
   <script src="script.js"></script>
