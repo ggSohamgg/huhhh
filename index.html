@@ -2,128 +2,368 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Soham Banerjee | AI/ML Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soham Banerjee - AI/ML Engineer</title>
-  <link rel="stylesheet" href="style.css" onerror="console.error('Failed to load style.css')">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" onerror="document.body.style.fontFamily='Segoe UI, sans-serif'">
+  <!-- Rubik for body, Space Grotesk for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="particle-bg"></div>
-  <button id="theme-toggle">Toggle Theme</button>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#about" class="active">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-    </ul>
-  </nav>
-  <div class="snap-container">
-    <section class="snap-section" id="about">
-      <div class="container">
-        <h1>Soham Banerjee</h1>
-        <div class="subtitle">AI/ML Engineer (BTech CSE, 3rd Year)</div>
-        <h2>About Me</h2>
-        <p id="typed"></p>
-        <div class="social-email">
-          <div class="social-btns">
-            <a href="https://linkedin.com" class="btn btn-linkedin">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.48v8.37h2.79z"></path></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com" class="btn btn-github">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.13-1.47-1.13-1.47-.92-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.49 2.29 1.06 2.85.81.09-.64.35-1.06.64-1.31-2.23-.25-4.58-1.11-4.58-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.36 4.69-4.61 4.94.36.31.56.73.56 1.47v2.18c0 .27.16.59.67.5A10 10 0 0 0 22 12a10 10 0 0 0-10-10z"></path></svg>
-              GitHub
-            </a>
+  <canvas id="currents-bg"></canvas>
+  <div class="site-content">
+    <nav class="main-nav">
+      <div class="brand">
+        <span class="logo">SOHAM BANERJEE</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <h1>
+        <span class="highlight">The AI/ML Engineer</span>
+      </h1>
+      <p class="hero-subtitle">
+        When you want the best, you don't scroll - you stop here. Check the work.
+      </p>
+      <a href="#projects" class="hero-cta">Go to Projects</a>
+    </header>
+
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          BTech CSE (3rd Year) at KIIT, Bhubaneswar with a focus on AI/ML applications. Hands-on experience with PyTorch, TensorFlow, and various deep learning architectures. Passionate about natural language processing, transformers, and optimizing models for edge deployment.
+        </p>
+        <p>
+          My interests span from building conversational AI systems to creating efficient on-device ML solutions. I enjoy tackling the challenges of model optimization for resource-constrained environments while maintaining high accuracy.
+        </p>
+        <p>
+          Outside of tech, I'm inspired by psychedelic music and visual arts-as you can see from this website's flowing aesthetic. Currently focusing on bringing LLMs to mobile devices, making AI more accessible for everyday use.
+        </p>
+
+
+      </div>
+      <div class="about-buttons">
+        <button onclick="window.open('https://www.linkedin.com/in/soham-banerjee-328366338/')" class="icon-btn linkedin">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </button>
+        <button onclick="window.open('https://github.com/ggSohamgg')" class="icon-btn github">
+          <i class="fab fa-github"></i> GitHub
+        </button>
+        <button onclick="window.open('https://docs.google.com/document/d/1Gbjass2hktKqwZB0n6H2o4wLTGyv5AzPITMzGr1bZlk/edit?tab=t.0')" class="icon-btn cv">
+          <i class="fas fa-file-alt"></i> CV
+        </button>
+      </div>
+    </section>
+
+    <section id="skills">
+  <h2>Skills</h2>
+  
+    <div class="skills-grid">
+      <!-- Machine Learning Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-brain"></i>
+          <h3>Machine Learning</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="sparkquiz,science-text-analyzer">
+            <h4>Supervised & Unsupervised Learning</h4>
+            <span class="skill-detail">Classification, Regression</span>
           </div>
-          <div class="email-copy">
-            <input type="text" id="email-input" value="soham@example.com" readonly>
-            <button class="btn" id="copy-email-btn">Copy Email</button>
+        </div>
+      </div>
+      
+      <!-- Deep Learning Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-network-wired"></i>
+          <h3>Deep Learning</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="conv-gpt,food-classifier,science-text-analyzer">
+            <h4>CNN, RNN, Transformers</h4>
+            <span class="skill-detail">Attention Mechanisms</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Model Optimization Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-microchip"></i>
+          <h3>Model Optimization & Deployment</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="food-classifier,android-edge-llm">
+            <h4>ONNX, TFLite</h4>
+            <span class="skill-detail">Quantization, Llama.cpp</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Frameworks Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-toolbox"></i>
+          <h3>Frameworks & Libraries</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="sparkquiz,conv-gpt,food-classifier,science-text-analyzer">
+            <h4>PyTorch, TensorFlow, scikit-learn</h4>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Programming Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-code"></i>
+          <h3>Programming</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="sparkquiz,conv-gpt,science-text-analyzer">
+            <h4>Python, C++, Java</h4>
+            <span class="skill-detail">Kotlin(basic), HTML, CSS</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Data Handling Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-database"></i>
+          <h3>Data Handling</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="science-text-analyzer">
+            <h4>NumPy, Pandas, Matplotlib</h4>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cloud & Edge Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-cloud"></i>
+          <h3>Cloud & Edge</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="sparkquiz,food-classifier,android-edge-llm">
+            <h4>AWS Lambda (serverless)</h4>
+            <span class="skill-detail">Hugging Face, Mobile Edge Deployment</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Web Frameworks Category -->
+      <div class="skill-category">
+        <div class="category-header">
+          <i class="fas fa-globe"></i>
+          <h3>Web Frameworks</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-projects="sparkquiz,science-text-analyzer">
+            <h4>Flask</h4>
+            <span class="skill-detail">REST API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+</section>
+    <section id="projects">
+      <h2>Projects</h2>
+      
+      <div class="project" id="sparkquiz">
+        <h3>SparkQuiz – AI Quiz Generator</h3>
+        <p>Flask app using OpenRouter's Qwen 3 30B A3B model for dynamic quiz generation on any subject with customizable options.</p>
+        <div class="project-details">
+          <ul>
+            <li><strong>Features:</strong> Customizable difficulty levels, question types, and explanations</li>
+            <li><strong>UI:</strong> Modern responsive design with glassmorphism effects</li>
+            <li><strong>Deployment:</strong> Available on Railway and Glitch</li>
+          </ul>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">LLMs</span>
+          <span class="skill-tag">API Integration</span>
+          <span class="skill-tag">Railway</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ggSohamgg/Spark_Quiz" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+      
+      <div class="project" id="conv-gpt">
+        <h3>Conv_GPT – Conversational AI</h3>
+        <p>A lightweight Transformer-based conversational AI model built from scratch with 89M parameters for persona-based interactions.</p>
+        <div class="project-details">
+          <ul>
+            <li><strong>Training:</strong> Built on DailyDialog dataset, fine-tuned on BlendedTalk</li>
+            <li><strong>Architecture:</strong> 12-layer Transformer with 16 attention heads</li>
+            <li><strong>Optimization:</strong> Mixed precision training (FP16) on free-tier Colab T4 GPU</li>
+          </ul>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Transformers</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Hugging Face</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ggSohamgg/Conv-GPT" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+      
+      <div class="project" id="android-edge-llm">
+        <h3>Android Edge LLM <span class="project-badge">Ongoing</span></h3>
+        <p>On-device language model deployment for Android, focusing on model optimization and efficient inference without cloud connectivity.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">ONNX</span>
+          <span class="skill-tag">TFLite</span>
+          <span class="skill-tag">Quantization</span>
+          <span class="skill-tag">Llama.cpp</span>
+          <span class="skill-tag">Android</span>
+          <span class="skill-tag">Kotlin</span>
+        </div>
+        <div class="project-links">
+          <a href="" target="_blank" class="github-btn in-progress">
+            <i class="fab fa-github"></i> View Code <span class="code-status">(in progress)</span>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="project" id="science-text-analyzer">
+        <h3>Science Text Analyzer</h3>
+        <p>Dual-purpose deep learning application that classifies academic text and generates scientific content.</p>
+        <div class="project-details">
+          <ul>
+            <li><strong>Text Classification:</strong> Classifies into Science, Mathematics, or History with 90% accuracy</li>
+            <li><strong>Text Generation:</strong> Generates scientific content for Physics, Chemistry, and Biology</li>
+            <li><strong>Deployment:</strong> Hosted on Hugging Face Spaces with Gradio UI</li>
+          </ul>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">LSTM</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Gradio</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">Flask</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ggSohamgg/Classification.Text_Gen" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+      
+      <div class="project" id="food-classifier">
+        <h3>Food5-PyTorch – Image Classification</h3>
+        <p>Deep learning model for food image classification using MobileNetV2, trained on a subset of the Food-101 dataset.</p>
+        <div class="project-details">
+          <ul>
+            <li><strong>Model:</strong> MobileNetV2 for efficient classification across 5 food categories</li>
+            <li><strong>Deployment:</strong> Available on Hugging Face Spaces</li>
+          </ul>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">CNN</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">Model Optimization</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ggSohamgg/Food5-PyTorch" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-list">
+        <div class="certification-card">
+          <div class="certification-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="certification-content">
+            <h3>NVIDIA Deep Learning Institute</h3>
+            <h4>Certificate in Deep Learning</h4>
+            <p class="certification-date">April 2025</p>
+            <ul class="certification-details">
+              <li>Hands-on experience building and training convolutional neural networks (CNNs)</li>
+              <li>Applied data augmentation techniques and fine-tuned pretrained models for deployment</li>
+            </ul>
+            <a href="https://learn.nvidia.com/certificates?id=b_uVApMUTSyDyf1LO23zjw" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
     </section>
-    <section class="snap-section" id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <p class="projects-intro">A few highlights from my CV & GitHub work in NLP, Transformers, and model optimization:</p>
-        <div class="project-grid">
-          <div class="project-card">
-            <img src="https://via.placeholder.com/300x150?text=SparkQuiz" alt="SparkQuiz">
-            <h3>SparkQuiz</h3>
-            <p>Flask AI quiz generator (Qwen 3 30B), glassmorphism UI, deployed on Railway.</p>
-            <a href="https://github.com">Repo</a>
+    
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-container">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
           </div>
-          <div class="project-card">
-            <img src="https://via.placeholder.com/300x150?text=Conv_GPT" alt="Conv_GPT">
-            <h3>Conv_GPT</h3>
-            <p>PyTorch GPT-style agent (89M params), trained on DailyDialog & BlendedTalk.</p>
-            <a href="https://github.com">Repo</a>
+          <div class="contact-info">
+            <h3>Email</h3>
+            <div class="copyable-info">
+              <span id="email-text">sohamaiuse@email.com</span>
+              <button class="copy-btn" data-target="email-text">
+                <i class="fas fa-copy"></i>
+              </button>
+              <span class="copy-tooltip">Copy</span>
+            </div>
           </div>
-          <div class="project-card">
-            <img src="https://via.placeholder.com/300x150?text=Food+Classifier" alt="Food Classifier">
-            <h3>Food Classifier</h3>
-            <p>MobileNetV2 classifier (90% acc) on food categories, live on Hugging Face Spaces.</p>
-            <a href="https://github.com">Repo</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-info">
+            <h3>Phone</h3>
+            <div class="copyable-info">
+              <span id="phone-text">+91 6291612912</span>
+              <button class="copy-btn" data-target="phone-text">
+                <i class="fas fa-copy"></i>
+              </button>
+              <span class="copy-tooltip">Copy</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="snap-section" id="skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="card">
-          <div class="skill">
-            <span>Machine Learning</span>
-            <div class="bar"><div data-level="90%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Deep Learning</span>
-            <div class="bar"><div data-level="85%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Model Optimization & Deployment</span>
-            <div class="bar"><div data-level="80%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Frameworks</span>
-            <div class="bar"><div data-level="88%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Languages</span>
-            <div class="bar"><div data-level="92%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Cloud & Edge</span>
-            <div class="bar"><div data-level="75%"></div></div>
-          </div>
-          <div class="skill">
-            <span>Web (Flask, REST)</span>
-            <div class="bar"><div data-level="82%"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="snap-section" id="education">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="card">
-          <p><strong>BTech in Computer Science & Engineering (3rd Year)</strong></p>
-          <p>Kalinga Institute of Industrial Technology, Bhubaneswar, India</p>
-          <p>GPA: 8.84 / 10 (Expected 2027)</p>
-        </div>
-      </div>
-    </section>
-    <section class="snap-section" id="certificates">
-      <div class="container">
-        <h2>Certificates</h2>
-        <div class="card">
-          <p>NVIDIA Deep Learning Institute – Deep Learning (Apr 2025)</p>
-        </div>
-      </div>
-    </section>
+
+    
+    <footer>
+      <p>Inspired by <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank" rel="noopener noreferrer">Tame Impala</a> | Designed & coded(vibe) by Soham Banerjee</p>
+    </footer>
   </div>
-  <script src="script.js" onerror="console.error('Failed to load script.js')"></script>
+  <script src="script.js"></script>
 </body>
 </html>
