@@ -1,5 +1,3 @@
-// --- Enhanced Tame Impala "Currents" Animation with Three Balls ---
-
 const canvas = document.getElementById('currents-bg');
 const ctx = canvas.getContext('2d');
 
